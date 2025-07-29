@@ -1,0 +1,13 @@
+16:35:48.759 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @563ms to org.robotframework.remoteserver.logging.Jetty2Log4J
+16:35:48.859 [main] INFO  org.eclipse.jetty.server.Server - jetty-9.4.31.v20200723; built: 2020-07-23T17:57:36.812Z; git: 450ba27947e13e66baa8cd1ce7e85a4461cacc1d; jvm 1.8.0_461-b11
+16:35:48.906 [main] INFO  org.eclipse.jetty.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@2f01783a{/,null,AVAILABLE}
+16:35:49.144 [main] INFO  org.eclipse.jetty.server.AbstractConnector - Started ServerConnector@71def8f8{HTTP/1.1, (http/1.1)}{0.0.0.0:56076}
+16:35:49.195 [main] INFO  org.eclipse.jetty.server.Server - Started @993ms
+[error] RobotDesktop: checkMousePosition: should be L[-960,540]@S(1) - but is not!
+Possible cause in case you did not touch the mouse while script was running:
+ Mouse actions are blocked generally or by the frontmost application.
+You might try to run the SikuliX stuff as admin.
+[error] RobotDesktop: checkMousePosition: should be L[-747,453]@S(1) - but is not!
+Possible cause in case you did not touch the mouse while script was running:
+ Mouse actions are blocked generally or by the frontmost application.
+You might try to run the SikuliX stuff as admin.

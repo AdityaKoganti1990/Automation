@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.12 on win32)" generated="20250710 18:00:40.264" rpa="false" schemaversion="3">
+<suite id="s1" name="Tests" source="c:\Users\91636\OneDrive\Desktop\Scanna\Automation\tests">
+<suite id="s1-s1" name="Smoke Test" source="c:\Users\91636\OneDrive\Desktop\Scanna\Automation\tests\smoke_test.robot">
+<kw name="Open VCSecurity Application" type="SETUP">
+<doc>Open the VC Security application and return its process ID</doc>
+<kw name="Launch Application" library="FlaUILibrary">
+<var>${PID}</var>
+<arg>${APP_PATH}</arg>
+<doc>Launches an application.</doc>
+<msg timestamp="20250710 18:00:45.030" level="INFO">${PID} = 9684</msg>
+<status status="PASS" starttime="20250710 18:00:44.768" endtime="20250710 18:00:45.036"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${PID}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20250710 18:00:45.038" level="INFO">${PID} = 9684</msg>
+<status status="PASS" starttime="20250710 18:00:45.036" endtime="20250710 18:00:45.038"/>
+</kw>
+<status status="PASS" starttime="20250710 18:00:44.767" endtime="20250710 18:00:45.038"/>
+</kw>
+<test id="s1-s1-t1" name="MFVC-T143 - Verify the .tiff images are getting opened in the VC security application" line="14">
+<kw name="Open Image Button" library="image_editor">
+<doc>Click the Open Image button in the VC Security application</doc>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<arg>${locators}open.png</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<msg timestamp="20250710 18:00:52.230" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150652207.png'/&gt;</msg>
+<status status="PASS" starttime="20250710 18:00:45.041" endtime="20250710 18:00:52.231"/>
+</kw>
+<kw name="Click" library="SikuliLibrary">
+<arg>${locators}open.png</arg>
+<doc>Click</doc>
+<msg timestamp="20250710 18:00:53.403" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150652551.png'/&gt;
+[log] CLICK on L[1881,431]@S(0) (545 msec)</msg>
+<status status="PASS" starttime="20250710 18:00:52.231" endtime="20250710 18:00:53.403"/>
+</kw>
+<status status="PASS" starttime="20250710 18:00:45.040" endtime="20250710 18:00:53.403"/>
+</kw>
+<kw name="Type File Name" library="image_editor">
+<arg>purse.tiff</arg>
+<doc>Type the file name in the Open Image dialog</doc>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<arg>${locators}filename_field.png</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<msg timestamp="20250710 18:00:54.096" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150654080.png'/&gt;</msg>
+<status status="PASS" starttime="20250710 18:00:53.405" endtime="20250710 18:00:54.096"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${locators}filename_field.png</arg>
+<arg>${test_data}${file_name}</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20250710 18:01:00.585" level="INFO">Input Text:
+c:\Users\91636\OneDrive\Desktop\Scanna\Automation\resources/../testdata/purse.tiff</msg>
+<msg timestamp="20250710 18:01:00.585" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150654406.png'/&gt;
+[log] CLICK on L[965,777]@S(0) (545 msec)
+[log]  TYPE "c:\Users\91636\OneDrive\Desktop\Scanna\Automation\resources/../testdata/purse.tiff"</msg>
+<status status="PASS" starttime="20250710 18:00:54.097" endtime="20250710 18:01:00.585"/>
+</kw>
+<kw name="Click" library="SikuliLibrary">
+<arg>${locators}open_button.png</arg>
+<doc>Click</doc>
+<msg timestamp="20250710 18:01:01.692" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150660881.png'/&gt;
+[log] CLICK on L[1653,917]@S(0) (549 msec)</msg>
+<status status="PASS" starttime="20250710 18:01:00.586" endtime="20250710 18:01:01.693"/>
+</kw>
+<status status="PASS" starttime="20250710 18:00:53.404" endtime="20250710 18:01:01.694"/>
+</kw>
+<kw name="Image Should Be Opened" library="image_editor">
+<doc>Verify that the image is opened in the application</doc>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250710 18:01:02.714" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20250710 18:01:01.699" endtime="20250710 18:01:02.714"/>
+</kw>
+<kw name="Screen Should Contain" library="SikuliLibrary">
+<arg>${locators}image_viewer.png</arg>
+<doc>Screen should contain</doc>
+<msg timestamp="20250710 18:01:03.401" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150663137.png'/&gt;</msg>
+<status status="PASS" starttime="20250710 18:01:02.715" endtime="20250710 18:01:03.402"/>
+</kw>
+<status status="PASS" starttime="20250710 18:01:01.696" endtime="20250710 18:01:03.403"/>
+</kw>
+<doc>Open a .tiff image and verify it opens correctly</doc>
+<tag>Smoke Test</tag>
+<status status="PASS" starttime="20250710 18:00:45.039" endtime="20250710 18:01:03.404"/>
+</test>
+<test id="s1-s1-t2" name="MFVC-T45 - Verify the rectangle Annotation can be added on the image" line="20">
+<kw name="Draw Rectangle Annotation" library="image_editor">
+<doc>Draw a rectangle annotation on the opened image</doc>
+<kw name="Click" library="SikuliLibrary">
+<arg>${locators}rectangle_annotation_button.png</arg>
+<doc>Click</doc>
+<msg timestamp="20250710 18:01:05.353" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150663966.png'/&gt;
+[log] CLICK on L[36,433]@S(0) (538 msec)</msg>
+<status status="PASS" starttime="20250710 18:01:03.409" endtime="20250710 18:01:05.354"/>
+</kw>
+<kw name="Drag And Drop" library="SikuliLibrary">
+<arg>${locators}src.png</arg>
+<arg>${locators}tar.png</arg>
+<doc>Drag the source image to target image.
+If source image is empty, drag the last match and drop at given target</doc>
+<msg timestamp="20250710 18:01:07.953" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150665692.png'/&gt;</msg>
+<msg timestamp="20250710 18:01:07.953" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150665974.png'/&gt;</msg>
+<status status="PASS" starttime="20250710 18:01:05.354" endtime="20250710 18:01:07.955"/>
+</kw>
+<status status="PASS" starttime="20250710 18:01:03.408" endtime="20250710 18:01:07.955"/>
+</kw>
+<kw name="Rectangle Annotation Should Be Added" library="image_editor">
+<doc>Verify that the rectangle annotation is added</doc>
+<kw name="Screen Should Contain" library="SikuliLibrary">
+<arg>${locators}rectangle_annotation.png</arg>
+<doc>Screen should contain</doc>
+<msg timestamp="20250710 18:01:08.563" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150668280.png'/&gt;</msg>
+<status status="PASS" starttime="20250710 18:01:07.956" endtime="20250710 18:01:08.564"/>
+</kw>
+<status status="PASS" starttime="20250710 18:01:07.955" endtime="20250710 18:01:08.564"/>
+</kw>
+<doc>Test rectangle annotation functionality</doc>
+<tag>Smoke Test</tag>
+<status status="PASS" starttime="20250710 18:01:03.406" endtime="20250710 18:01:08.565"/>
+</test>
+<test id="s1-s1-t3" name="MFVC-T114 - Verify the Rectangle annotation can be deleted" line="25">
+<kw name="Delete Rectangle Annotation" library="image_editor">
+<doc>Delete the rectangle annotation</doc>
+<kw name="Click" library="SikuliLibrary">
+<arg>${locators}delete_annotation.png</arg>
+<doc>Click</doc>
+<msg timestamp="20250710 18:01:09.940" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150668904.png'/&gt;
+[log] CLICK on L[36,364]@S(0) (565 msec)</msg>
+<status status="PASS" starttime="20250710 18:01:08.567" endtime="20250710 18:01:09.941"/>
+</kw>
+<status status="PASS" starttime="20250710 18:01:08.567" endtime="20250710 18:01:09.942"/>
+</kw>
+<kw name="Image Should Not Contain Annotation" library="image_editor">
+<doc>Verify that the rectangle annotation is not present</doc>
+<kw name="Image Should Be Opened" library="image_editor">
+<doc>Verify that the image is opened in the application</doc>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250710 18:01:10.959" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20250710 18:01:09.946" endtime="20250710 18:01:10.960"/>
+</kw>
+<kw name="Screen Should Contain" library="SikuliLibrary">
+<arg>${locators}image_viewer.png</arg>
+<doc>Screen should contain</doc>
+<msg timestamp="20250710 18:01:11.692" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150671458.png'/&gt;</msg>
+<status status="PASS" starttime="20250710 18:01:10.960" endtime="20250710 18:01:11.694"/>
+</kw>
+<status status="PASS" starttime="20250710 18:01:09.944" endtime="20250710 18:01:11.694"/>
+</kw>
+<status status="PASS" starttime="20250710 18:01:09.943" endtime="20250710 18:01:11.694"/>
+</kw>
+<doc>Test rectangle annotation deletion functionality</doc>
+<tag>Smoke Test</tag>
+<status status="PASS" starttime="20250710 18:01:08.566" endtime="20250710 18:01:11.695"/>
+</test>
+<test id="s1-s1-t4" name="MFVC-T239 - Verify Image rotates 180 degrees clockwise when the &quot;Rotate 180°&quot; button is clicked." line="30">
+<kw name="Rotate 180° Image" library="image_editor">
+<doc>Rotate the image in the viewer</doc>
+<kw name="Click" library="SikuliLibrary">
+<arg>${locators}rotate_button.png</arg>
+<doc>Click</doc>
+<msg timestamp="20250710 18:01:13.267" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150672128.png'/&gt;
+[log] CLICK on L[1886,632]@S(0) (541 msec)</msg>
+<status status="PASS" starttime="20250710 18:01:11.699" endtime="20250710 18:01:13.269"/>
+</kw>
+<kw name="Click" library="SikuliLibrary">
+<arg>${locators}rotate_180_button.png</arg>
+<doc>Click</doc>
+<msg timestamp="20250710 18:01:15.698" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150674649.png'/&gt;
+[log] CLICK on L[1799,675]@S(0) (553 msec)</msg>
+<status status="PASS" starttime="20250710 18:01:13.269" endtime="20250710 18:01:15.699"/>
+</kw>
+<status status="PASS" starttime="20250710 18:01:11.698" endtime="20250710 18:01:15.699"/>
+</kw>
+<kw name="Image Should Be Rotated" library="image_editor">
+<doc>Verify that the image is rotated correctly</doc>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250710 18:01:17.710" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20250710 18:01:15.704" endtime="20250710 18:01:17.711"/>
+</kw>
+<kw name="Screen Should Contain" library="SikuliLibrary">
+<arg>${locators}rotated_image.png</arg>
+<doc>Screen should contain</doc>
+<msg timestamp="20250710 18:01:18.621" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150678316.png'/&gt;</msg>
+<status status="PASS" starttime="20250710 18:01:17.712" endtime="20250710 18:01:18.622"/>
+</kw>
+<status status="PASS" starttime="20250710 18:01:15.701" endtime="20250710 18:01:18.624"/>
+</kw>
+<doc>Verify that the image rotates correctly with annotations</doc>
+<tag>Smoke Test</tag>
+<status status="PASS" starttime="20250710 18:01:11.697" endtime="20250710 18:01:18.624"/>
+</test>
+<test id="s1-s1-t5" name="MFVC-T92 - Verify the Sharpening enhancement is applied over the image on dragging the Sharpening slider" line="35">
+<kw name="Open Image Button" library="image_editor">
+<doc>Click the Open Image button in the VC Security application</doc>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<arg>${locators}open.png</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<msg timestamp="20250710 18:01:19.132" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150679111.png'/&gt;</msg>
+<status status="PASS" starttime="20250710 18:01:18.627" endtime="20250710 18:01:19.133"/>
+</kw>
+<kw name="Click" library="SikuliLibrary">
+<arg>${locators}open.png</arg>
+<doc>Click</doc>
+<msg timestamp="20250710 18:01:20.655" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150679613.png'/&gt;
+[log] CLICK on L[1881,431]@S(0) (548 msec)</msg>
+<status status="PASS" starttime="20250710 18:01:19.136" endtime="20250710 18:01:20.656"/>
+</kw>
+<status status="PASS" starttime="20250710 18:01:18.627" endtime="20250710 18:01:20.656"/>
+</kw>
+<kw name="Type File Name" library="image_editor">
+<arg>purse.tiff</arg>
+<doc>Type the file name in the Open Image dialog</doc>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<arg>${locators}filename_field.png</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<msg timestamp="20250710 18:01:21.431" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150681412.png'/&gt;</msg>
+<status status="PASS" starttime="20250710 18:01:20.657" endtime="20250710 18:01:21.432"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${locators}filename_field.png</arg>
+<arg>${test_data}${file_name}</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20250710 18:01:28.309" level="INFO">Input Text:
+c:\Users\91636\OneDrive\Desktop\Scanna\Automation\resources/../testdata/purse.tiff</msg>
+<msg timestamp="20250710 18:01:28.310" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150681865.png'/&gt;
+[log] CLICK on L[965,777]@S(0) (539 msec)
+[log]  TYPE "c:\Users\91636\OneDrive\Desktop\Scanna\Automation\resources/../testdata/purse.tiff"</msg>
+<status status="PASS" starttime="20250710 18:01:21.432" endtime="20250710 18:01:28.310"/>
+</kw>
+<kw name="Click" library="SikuliLibrary">
+<arg>${locators}open_button.png</arg>
+<doc>Click</doc>
+<msg timestamp="20250710 18:01:29.716" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150688789.png'/&gt;
+[log] CLICK on L[1653,917]@S(0) (545 msec)</msg>
+<status status="PASS" starttime="20250710 18:01:28.311" endtime="20250710 18:01:29.721"/>
+</kw>
+<status status="PASS" starttime="20250710 18:01:20.657" endtime="20250710 18:01:29.725"/>
+</kw>
+<kw name="Image Should Be Opened" library="image_editor">
+<doc>Verify that the image is opened in the application</doc>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250710 18:01:30.752" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20250710 18:01:29.740" endtime="20250710 18:01:30.752"/>
+</kw>
+<kw name="Screen Should Contain" library="SikuliLibrary">
+<arg>${locators}image_viewer.png</arg>
+<doc>Screen should contain</doc>
+<msg timestamp="20250710 18:01:31.919" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150691621.png'/&gt;</msg>
+<status status="PASS" starttime="20250710 18:01:30.752" endtime="20250710 18:01:31.919"/>
+</kw>
+<status status="PASS" starttime="20250710 18:01:29.739" endtime="20250710 18:01:31.919"/>
+</kw>
+<kw name="Open Image Enhancement" library="image_editor">
+<doc>Open the image enhancement dialog</doc>
+<kw name="Click" library="SikuliLibrary">
+<arg>${locators}enhancement_button.png</arg>
+<doc>Click</doc>
+<msg timestamp="20250710 18:01:33.370" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150692418.png'/&gt;
+[log] CLICK on L[1884,770]@S(0) (547 msec)</msg>
+<status status="PASS" starttime="20250710 18:01:31.920" endtime="20250710 18:01:33.372"/>
+</kw>
+<status status="PASS" starttime="20250710 18:01:31.920" endtime="20250710 18:01:33.374"/>
+</kw>
+<kw name="Apply Sharpening Enhancement" library="image_editor">
+<doc>Apply sharpening enhancement to the image</doc>
+<kw name="Click" library="SikuliLibrary">
+<arg>${locators}sharpening_slider.png</arg>
+<doc>Click</doc>
+<msg timestamp="20250710 18:01:35.601" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150694471.png'/&gt;
+[log] CLICK on L[1271,757]@S(0) (579 msec)</msg>
+<status status="PASS" starttime="20250710 18:01:33.378" endtime="20250710 18:01:35.603"/>
+</kw>
+<kw name="Drag And Drop" library="SikuliLibrary">
+<arg>${locators}sharpening_slider.png</arg>
+<arg>${locators}sharpening_target.png</arg>
+<doc>Drag the source image to target image.
+If source image is empty, drag the last match and drop at given target</doc>
+<msg timestamp="20250710 18:01:37.866" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150696028.png'/&gt;</msg>
+<msg timestamp="20250710 18:01:37.866" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150696405.png'/&gt;</msg>
+<status status="PASS" starttime="20250710 18:01:35.603" endtime="20250710 18:01:37.866"/>
+</kw>
+<status status="PASS" starttime="20250710 18:01:33.375" endtime="20250710 18:01:37.866"/>
+</kw>
+<kw name="Close Image Enhancement" library="image_editor">
+<doc>Close the sharpening enhancement dialog</doc>
+<kw name="Click" library="SikuliLibrary">
+<arg>${locators}close_enhancement.png</arg>
+<doc>Click</doc>
+<msg timestamp="20250710 18:01:39.449" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150698472.png'/&gt;
+[log] CLICK on L[1557,172]@S(0) (545 msec)</msg>
+<status status="PASS" starttime="20250710 18:01:37.868" endtime="20250710 18:01:39.451"/>
+</kw>
+<status status="PASS" starttime="20250710 18:01:37.867" endtime="20250710 18:01:39.453"/>
+</kw>
+<kw name="Sharpening Enhancement Should Be Applied" library="image_editor">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250710 18:01:40.461" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20250710 18:01:39.458" endtime="20250710 18:01:40.462"/>
+</kw>
+<kw name="Screen Should Contain" library="SikuliLibrary">
+<arg>${locators}sharpened_image.png</arg>
+<doc>Screen should contain</doc>
+<msg timestamp="20250710 18:01:41.237" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150700943.png'/&gt;</msg>
+<status status="PASS" starttime="20250710 18:01:40.462" endtime="20250710 18:01:41.237"/>
+</kw>
+<status status="PASS" starttime="20250710 18:01:39.456" endtime="20250710 18:01:41.237"/>
+</kw>
+<doc>Test sharpening enhancement functionality</doc>
+<tag>Smoke Test</tag>
+<status status="PASS" starttime="20250710 18:01:18.625" endtime="20250710 18:01:41.238"/>
+</test>
+<test id="s1-s1-t6" name="MFVC-T183 - Verify whether able to undo the applied filter over the image" line="45">
+<kw name="Undo Last Action" library="image_editor">
+<doc>Undo the last action performed on the image</doc>
+<kw name="Click" library="SikuliLibrary">
+<arg>${locators}undo_button.png</arg>
+<doc>Click</doc>
+<msg timestamp="20250710 18:01:42.985" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150701831.png'/&gt;
+[log] CLICK on L[1884,225]@S(0) (547 msec)</msg>
+<status status="PASS" starttime="20250710 18:01:41.243" endtime="20250710 18:01:42.987"/>
+</kw>
+<status status="PASS" starttime="20250710 18:01:41.243" endtime="20250710 18:01:42.988"/>
+</kw>
+<kw name="Orginal Image Should Be Shown" library="image_editor">
+<doc>Verify that the original image is shown after undo</doc>
+<kw name="Image Should Be Opened" library="image_editor">
+<doc>Verify that the image is opened in the application</doc>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250710 18:01:44.030" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20250710 18:01:42.997" endtime="20250710 18:01:44.031"/>
+</kw>
+<kw name="Screen Should Contain" library="SikuliLibrary">
+<arg>${locators}image_viewer.png</arg>
+<doc>Screen should contain</doc>
+<msg timestamp="20250710 18:01:45.425" level="INFO">Could not find P(c:\Users\91636\OneDrive\Desktop\Scanna\Automation\tests/../locators/image_viewer.png) S: 0.699999988079071</msg>
+<msg timestamp="20250710 18:01:45.425" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150705061.png'/&gt;</msg>
+<msg timestamp="20250710 18:01:45.434" level="FAIL">com.github.rainmanwy.robotframework.sikulilib.exceptions.ScreenOperationException: Screen should contain c:\Users\91636\OneDrive\Desktop\Scanna\Automation\tests/../locators/image_viewer.png</msg>
+<status status="FAIL" starttime="20250710 18:01:44.032" endtime="20250710 18:01:45.444"/>
+</kw>
+<status status="FAIL" starttime="20250710 18:01:42.992" endtime="20250710 18:01:45.446"/>
+</kw>
+<status status="FAIL" starttime="20250710 18:01:42.991" endtime="20250710 18:01:45.447"/>
+</kw>
+<doc>Test undo functionality for applied filter</doc>
+<tag>Smoke Test</tag>
+<status status="FAIL" starttime="20250710 18:01:41.240" endtime="20250710 18:01:45.451">com.github.rainmanwy.robotframework.sikulilib.exceptions.ScreenOperationException: Screen should contain c:\Users\91636\OneDrive\Desktop\Scanna\Automation\tests/../locators/image_viewer.png</status>
+</test>
+<kw name="Close VC Security Application" type="TEARDOWN">
+<kw name="Close App" library="common">
+<arg>${PID}</arg>
+<kw name="Click" library="SikuliLibrary">
+<arg>${locators}close_app.png</arg>
+<doc>Click</doc>
+<msg timestamp="20250710 18:01:46.719" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150705883.png'/&gt;
+[log] CLICK on L[1886,64]@S(0) (559 msec)</msg>
+<status status="PASS" starttime="20250710 18:01:45.455" endtime="20250710 18:01:46.725"/>
+</kw>
+<kw name="Wait Until Screen Contain" library="SikuliLibrary">
+<arg>${locators}save_no.png</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Wait until screen contain
+ Wait until image shown in screen</doc>
+<msg timestamp="20250710 18:01:47.214" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150707206.png'/&gt;</msg>
+<status status="PASS" starttime="20250710 18:01:46.726" endtime="20250710 18:01:47.215"/>
+</kw>
+<kw name="Click" library="SikuliLibrary">
+<arg>${locators}save_no.png</arg>
+<doc>Click</doc>
+<msg timestamp="20250710 18:01:48.404" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1752150707552.png'/&gt;
+[log] CLICK on L[1211,594]@S(0) (533 msec)</msg>
+<status status="PASS" starttime="20250710 18:01:47.215" endtime="20250710 18:01:48.405"/>
+</kw>
+<status status="PASS" starttime="20250710 18:01:45.454" endtime="20250710 18:01:48.408"/>
+</kw>
+<status status="PASS" starttime="20250710 18:01:45.453" endtime="20250710 18:01:48.411"/>
+</kw>
+<doc>Sample test suite for VC Security application</doc>
+<status status="FAIL" starttime="20250710 18:00:40.334" endtime="20250710 18:01:48.411"/>
+</suite>
+<doc>Somke test suite for VC Security application</doc>
+<status status="FAIL" starttime="20250710 18:00:40.275" endtime="20250710 18:01:48.420"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="5" fail="1" skip="0">Smoke Test</stat>
+</tag>
+<suite>
+<stat pass="5" fail="1" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="5" fail="1" skip="0" id="s1-s1" name="Smoke Test">Tests.Smoke Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
