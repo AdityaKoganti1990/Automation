@@ -1,104 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.5 on win32)" generated="2025-07-29T15:33:09.159244" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.13.5 on win32)" generated="2025-07-29T17:08:08.871099" rpa="false" schemaversion="5">
 <suite id="s1" name="Automation" source="Z:\Visual Studio Code\Automation">
 <suite id="s1-s1" name="Tests" source="Z:\Visual Studio Code\Automation\tests">
 <suite id="s1-s1-s1" name="Smoke Test" source="Z:\Visual Studio Code\Automation\tests\smoke_test.robot">
-<kw name="Open VCSecurity Application" type="SETUP">
-<kw name="Launch Application" owner="FlaUILibrary">
-<msg time="2025-07-29T15:33:14.385190" level="INFO">${PID} = 25708</msg>
-<var>${PID}</var>
-<arg>${APP_PATH}</arg>
-<doc>Launches an application.</doc>
-<status status="PASS" start="2025-07-29T15:33:14.271674" elapsed="0.114150"/>
-</kw>
-<kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-07-29T15:33:14.386890" level="INFO">${PID} = 25708</msg>
-<arg>${PID}</arg>
-<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-07-29T15:33:14.386340" elapsed="0.000955"/>
-</kw>
-<doc>Open the VC Security application and return its process ID</doc>
-<status status="PASS" start="2025-07-29T15:33:14.270911" elapsed="0.116616"/>
-</kw>
-<test id="s1-s1-s1-t1" name="MFVC-T45 - Verify the rectangle Annotation can be added on the image" line="30">
-<kw name="Draw Rectangle Annotation" owner="image_editor">
+<test id="s1-s1-s1-t1" name="MFVC-T199 - Verify whether grid overlay is removed from the image" line="137">
+<kw name="Click Grid Overlay Button" owner="image_editor">
 <kw name="Click" owner="SikuliLibrary">
-<msg time="2025-07-29T15:33:17.828710" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1753783397070.png'/&gt;
-[log] CLICK on L[29,463]@S(0) (578 msec)</msg>
-<arg>${locators}rectangle_annotation_button.png</arg>
+<msg time="2025-07-29T17:08:13.318669" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1753789092398.png'/&gt;
+[log] CLICK on L[30,895]@S(0) (568 msec)</msg>
+<arg>${locators}grid_overlay_button.png</arg>
 <doc>Click</doc>
-<status status="PASS" start="2025-07-29T15:33:14.389487" elapsed="3.439455"/>
+<status status="PASS" start="2025-07-29T17:08:11.977046" elapsed="1.341902"/>
 </kw>
-<kw name="Drag And Drop" owner="SikuliLibrary">
-<msg time="2025-07-29T15:33:21.036745" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1753783400901.png'/&gt;</msg>
-<msg time="2025-07-29T15:33:21.037331" level="FAIL">com.github.rainmanwy.robotframework.sikulilib.exceptions.TimeoutException: Timeout happened, could not find P(Z:\Visual Studio Code\Automation\tests/../locators/src.png) S: 0.699999988079071</msg>
-<arg>${locators}src.png</arg>
-<arg>${locators}tar.png</arg>
-<doc>Drag the source image to target image.
-If source image is empty, drag the last match and drop at given target</doc>
-<status status="FAIL" start="2025-07-29T15:33:17.829154" elapsed="3.208656">com.github.rainmanwy.robotframework.sikulilib.exceptions.TimeoutException: Timeout happened, could not find P(Z:\Visual Studio Code\Automation\tests/../locators/src.png) S: 0.699999988079071</status>
+<doc>Click the grid overlay button to apply grid overlay on the image</doc>
+<status status="PASS" start="2025-07-29T17:08:11.976398" elapsed="1.342761"/>
 </kw>
-<doc>Draw a rectangle annotation on the opened image</doc>
-<status status="FAIL" start="2025-07-29T15:33:14.388975" elapsed="6.649196">com.github.rainmanwy.robotframework.sikulilib.exceptions.TimeoutException: Timeout happened, could not find P(Z:\Visual Studio Code\Automation\tests/../locators/src.png) S: 0.699999988079071</status>
+<kw name="Compare Image Viewer" owner="image_editor">
+<kw name="Screen Should Contain" owner="SikuliLibrary">
+<msg time="2025-07-29T17:08:14.071446" level="INFO">Could not find P(Z:\Visual Studio Code\Automation\tests/../locators/image_viewer.png) S: 0.699999988079071</msg>
+<msg time="2025-07-29T17:08:14.071464" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1753789093667.png'/&gt;</msg>
+<msg time="2025-07-29T17:08:14.072051" level="FAIL">com.github.rainmanwy.robotframework.sikulilib.exceptions.ScreenOperationException: Screen should contain Z:\Visual Studio Code\Automation\tests/../locators/image_viewer.png</msg>
+<arg>${locators}${file_name}</arg>
+<doc>Screen should contain</doc>
+<status status="FAIL" start="2025-07-29T17:08:13.320388" elapsed="0.752195">com.github.rainmanwy.robotframework.sikulilib.exceptions.ScreenOperationException: Screen should contain Z:\Visual Studio Code\Automation\tests/../locators/image_viewer.png</status>
 </kw>
-<kw name="Rectangle Annotation Should Be Added" owner="image_editor">
-<doc>Verify that the rectangle annotation is added</doc>
-<status status="NOT RUN" start="2025-07-29T15:33:21.038758" elapsed="0.000297"/>
+<arg>image_viewer.png</arg>
+<doc>Compare the image viewer with the expected image</doc>
+<status status="FAIL" start="2025-07-29T17:08:13.319572" elapsed="0.753243">com.github.rainmanwy.robotframework.sikulilib.exceptions.ScreenOperationException: Screen should contain Z:\Visual Studio Code\Automation\tests/../locators/image_viewer.png</status>
 </kw>
-<doc>Test rectangle annotation functionality</doc>
+<doc>Test grid overlay removal functionality</doc>
 <tag>Smoke Test</tag>
-<status status="FAIL" start="2025-07-29T15:33:14.387678" elapsed="6.651822">com.github.rainmanwy.robotframework.sikulilib.exceptions.TimeoutException: Timeout happened, could not find P(Z:\Visual Studio Code\Automation\tests/../locators/src.png) S: 0.699999988079071</status>
+<status status="FAIL" start="2025-07-29T17:08:11.975262" elapsed="2.097931">com.github.rainmanwy.robotframework.sikulilib.exceptions.ScreenOperationException: Screen should contain Z:\Visual Studio Code\Automation\tests/../locators/image_viewer.png</status>
 </test>
-<kw name="Close VC Security Application" type="TEARDOWN">
-<kw name="Close App" owner="common">
-<kw name="Click" owner="SikuliLibrary">
-<msg time="2025-07-29T15:33:22.041625" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1753783401254.png'/&gt;
-[log] CLICK on L[1898,26]@S(0) (576 msec)</msg>
-<arg>${locators}close_app.png</arg>
-<doc>Click</doc>
-<status status="PASS" start="2025-07-29T15:33:21.041564" elapsed="1.000635"/>
-</kw>
-<kw name="Wait Until Screen Contain" owner="SikuliLibrary">
-<msg time="2025-07-29T15:33:37.430567" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1753783417108.png'/&gt;</msg>
-<msg time="2025-07-29T15:33:37.430912" level="FAIL">com.github.rainmanwy.robotframework.sikulilib.exceptions.TimeoutException: Timeout happened, could not find P(Z:\Visual Studio Code\Automation\tests/../locators/save_no.png) S: 0.699999988079071</msg>
-<arg>${locators}save_no.png</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Wait until screen contain
- Wait until image shown in screen</doc>
-<status status="FAIL" start="2025-07-29T15:33:22.042537" elapsed="15.388704">com.github.rainmanwy.robotframework.sikulilib.exceptions.TimeoutException: Timeout happened, could not find P(Z:\Visual Studio Code\Automation\tests/../locators/save_no.png) S: 0.699999988079071</status>
-</kw>
-<kw name="Click" owner="SikuliLibrary">
-<msg time="2025-07-29T15:33:40.839490" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1753783420523.png'/&gt;</msg>
-<msg time="2025-07-29T15:33:40.839794" level="FAIL">com.github.rainmanwy.robotframework.sikulilib.exceptions.TimeoutException: Timeout happened, could not find P(Z:\Visual Studio Code\Automation\tests/../locators/save_no.png) S: 0.699999988079071</msg>
-<arg>${locators}save_no.png</arg>
-<doc>Click</doc>
-<status status="FAIL" start="2025-07-29T15:33:37.431466" elapsed="3.408593">com.github.rainmanwy.robotframework.sikulilib.exceptions.TimeoutException: Timeout happened, could not find P(Z:\Visual Studio Code\Automation\tests/../locators/save_no.png) S: 0.699999988079071</status>
-</kw>
-<arg>${PID}</arg>
-<status status="FAIL" start="2025-07-29T15:33:21.041257" elapsed="19.799010">Several failures occurred:
-
-1) com.github.rainmanwy.robotframework.sikulilib.exceptions.TimeoutException: Timeout happened, could not find P(Z:\Visual Studio Code\Automation\tests/../locators/save_no.png) S: 0.699999988079071
-
-2) com.github.rainmanwy.robotframework.sikulilib.exceptions.TimeoutException: Timeout happened, could not find P(Z:\Visual Studio Code\Automation\tests/../locators/save_no.png) S: 0.699999988079071</status>
-</kw>
-<status status="FAIL" start="2025-07-29T15:33:21.040840" elapsed="19.799560">Several failures occurred:
-
-1) com.github.rainmanwy.robotframework.sikulilib.exceptions.TimeoutException: Timeout happened, could not find P(Z:\Visual Studio Code\Automation\tests/../locators/save_no.png) S: 0.699999988079071
-
-2) com.github.rainmanwy.robotframework.sikulilib.exceptions.TimeoutException: Timeout happened, could not find P(Z:\Visual Studio Code\Automation\tests/../locators/save_no.png) S: 0.699999988079071</status>
-</kw>
 <doc>Sample test suite for VC Security application</doc>
-<status status="FAIL" start="2025-07-29T15:33:09.195035" elapsed="31.645459">Suite teardown failed:
-Several failures occurred:
-
-1) com.github.rainmanwy.robotframework.sikulilib.exceptions.TimeoutException: Timeout happened, could not find P(Z:\Visual Studio Code\Automation\tests/../locators/save_no.png) S: 0.699999988079071
-
-2) com.github.rainmanwy.robotframework.sikulilib.exceptions.TimeoutException: Timeout happened, could not find P(Z:\Visual Studio Code\Automation\tests/../locators/save_no.png) S: 0.699999988079071</status>
+<status status="FAIL" start="2025-07-29T17:08:08.903155" elapsed="5.171006"/>
 </suite>
 <doc>Somke test suite for VC Security application</doc>
-<status status="FAIL" start="2025-07-29T15:33:09.193321" elapsed="31.648677"/>
+<status status="FAIL" start="2025-07-29T17:08:08.897102" elapsed="5.177980"/>
 </suite>
-<status status="FAIL" start="2025-07-29T15:33:09.167779" elapsed="31.675049"/>
+<status status="FAIL" start="2025-07-29T17:08:08.878327" elapsed="5.197491"/>
 </suite>
 <statistics>
 <total>

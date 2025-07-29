@@ -153,3 +153,12 @@ Draw Angle Annotation
 Angle Annotation Should Be Added
     [Documentation]    Verify that the angle annotation is added
     Screen Should Contain    ${locators}angle_annotation.png
+
+Click Grid Overlay Button
+    [Documentation]    Click the grid overlay button to apply grid overlay on the image
+    SikuliLibrary.Click    ${locators}grid_overlay_button.png
+
+Compare Image Viewer
+    [Arguments]    ${file_name}
+    [Documentation]    Compare the image viewer with the expected image
+    Screen Should Contain    ${locators}${file_name}
