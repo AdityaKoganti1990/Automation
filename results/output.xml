@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.5 on win32)" generated="2025-07-29T17:08:08.871099" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.13.5 on win32)" generated="2025-07-29T18:26:12.335698" rpa="false" schemaversion="5">
 <suite id="s1" name="Automation" source="Z:\Visual Studio Code\Automation">
 <suite id="s1-s1" name="Tests" source="Z:\Visual Studio Code\Automation\tests">
 <suite id="s1-s1-s1" name="Smoke Test" source="Z:\Visual Studio Code\Automation\tests\smoke_test.robot">
-<test id="s1-s1-s1-t1" name="MFVC-T199 - Verify whether grid overlay is removed from the image" line="137">
+<test id="s1-s1-s1-t1" name="MFVC-T198 - Verify whether grid overlay is applied over the image" line="132">
 <kw name="Click Grid Overlay Button" owner="image_editor">
 <kw name="Click" owner="SikuliLibrary">
-<msg time="2025-07-29T17:08:13.318669" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1753789092398.png'/&gt;
-[log] CLICK on L[30,895]@S(0) (568 msec)</msg>
+<msg time="2025-07-29T18:26:16.776859" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1753793775979.png'/&gt;
+[log] CLICK on L[30,895]@S(0) (569 msec)</msg>
 <arg>${locators}grid_overlay_button.png</arg>
 <doc>Click</doc>
-<status status="PASS" start="2025-07-29T17:08:11.977046" elapsed="1.341902"/>
+<status status="PASS" start="2025-07-29T18:26:15.542462" elapsed="1.234803"/>
 </kw>
 <doc>Click the grid overlay button to apply grid overlay on the image</doc>
-<status status="PASS" start="2025-07-29T17:08:11.976398" elapsed="1.342761"/>
+<status status="PASS" start="2025-07-29T18:26:15.541933" elapsed="1.235610"/>
 </kw>
 <kw name="Compare Image Viewer" owner="image_editor">
 <kw name="Screen Should Contain" owner="SikuliLibrary">
-<msg time="2025-07-29T17:08:14.071446" level="INFO">Could not find P(Z:\Visual Studio Code\Automation\tests/../locators/image_viewer.png) S: 0.699999988079071</msg>
-<msg time="2025-07-29T17:08:14.071464" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1753789093667.png'/&gt;</msg>
-<msg time="2025-07-29T17:08:14.072051" level="FAIL">com.github.rainmanwy.robotframework.sikulilib.exceptions.ScreenOperationException: Screen should contain Z:\Visual Studio Code\Automation\tests/../locators/image_viewer.png</msg>
-<arg>${locators}${file_name}</arg>
+<msg time="2025-07-29T18:26:17.472849" level="INFO">Could not find P(Z:\Visual Studio Code\Automation\tests/../locators/grid_overlay_viewer.png) S: 0.699999988079071</msg>
+<msg time="2025-07-29T18:26:17.472867" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1753793777171.png'/&gt;</msg>
+<msg time="2025-07-29T18:26:17.473506" level="FAIL">com.github.rainmanwy.robotframework.sikulilib.exceptions.ScreenOperationException: Screen should contain Z:\Visual Studio Code\Automation\tests/../locators/grid_overlay_viewer.png</msg>
+<arg>${locators}${file_name1}</arg>
 <doc>Screen should contain</doc>
-<status status="FAIL" start="2025-07-29T17:08:13.320388" elapsed="0.752195">com.github.rainmanwy.robotframework.sikulilib.exceptions.ScreenOperationException: Screen should contain Z:\Visual Studio Code\Automation\tests/../locators/image_viewer.png</status>
+<status status="FAIL" start="2025-07-29T18:26:16.778931" elapsed="0.695576">com.github.rainmanwy.robotframework.sikulilib.exceptions.ScreenOperationException: Screen should contain Z:\Visual Studio Code\Automation\tests/../locators/grid_overlay_viewer.png</status>
 </kw>
-<arg>image_viewer.png</arg>
+<arg>grid_overlay_viewer.png</arg>
 <doc>Compare the image viewer with the expected image</doc>
-<status status="FAIL" start="2025-07-29T17:08:13.319572" elapsed="0.753243">com.github.rainmanwy.robotframework.sikulilib.exceptions.ScreenOperationException: Screen should contain Z:\Visual Studio Code\Automation\tests/../locators/image_viewer.png</status>
+<status status="FAIL" start="2025-07-29T18:26:16.778101" elapsed="0.696690">com.github.rainmanwy.robotframework.sikulilib.exceptions.ScreenOperationException: Screen should contain Z:\Visual Studio Code\Automation\tests/../locators/grid_overlay_viewer.png</status>
 </kw>
-<doc>Test grid overlay removal functionality</doc>
+<doc>Test grid overlay functionality</doc>
 <tag>Smoke Test</tag>
-<status status="FAIL" start="2025-07-29T17:08:11.975262" elapsed="2.097931">com.github.rainmanwy.robotframework.sikulilib.exceptions.ScreenOperationException: Screen should contain Z:\Visual Studio Code\Automation\tests/../locators/image_viewer.png</status>
+<status status="FAIL" start="2025-07-29T18:26:15.540907" elapsed="1.934477">com.github.rainmanwy.robotframework.sikulilib.exceptions.ScreenOperationException: Screen should contain Z:\Visual Studio Code\Automation\tests/../locators/grid_overlay_viewer.png</status>
 </test>
 <doc>Sample test suite for VC Security application</doc>
-<status status="FAIL" start="2025-07-29T17:08:08.903155" elapsed="5.171006"/>
+<status status="FAIL" start="2025-07-29T18:26:12.368322" elapsed="5.108409"/>
 </suite>
 <doc>Somke test suite for VC Security application</doc>
-<status status="FAIL" start="2025-07-29T17:08:08.897102" elapsed="5.177980"/>
+<status status="FAIL" start="2025-07-29T18:26:12.363139" elapsed="5.114818"/>
 </suite>
-<status status="FAIL" start="2025-07-29T17:08:08.878327" elapsed="5.197491"/>
+<status status="FAIL" start="2025-07-29T18:26:12.343116" elapsed="5.135753"/>
 </suite>
 <statistics>
 <total>

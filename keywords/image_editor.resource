@@ -69,6 +69,7 @@ Close Image Enhancement
     SikuliLibrary.Click    ${locators}close_enhancement.png
 
 Sharpening Enhancement Should Be Applied
+    [Documentation]    Verify that the sharpening enhancement is applied
     Sleep    2
     Screen Should Contain    ${locators}sharpened_image.png
 
@@ -81,6 +82,7 @@ Orginal Image Should Be Shown
     Image Should Be Opened
 
 Draw Text Annotation
+    [Documentation]    Draw a text annotation on the image
     SikuliLibrary.Click    ${locators}text_annotation_button.png
     SikuliLibrary.Drag And Drop    ${locators}src.png    ${locators}tar.png
 
@@ -93,14 +95,16 @@ Delete Text Annotation
     SikuliLibrary.Click    ${locators}delete_annotation.png
 
 Draw Line Profile Measurement Annotation
+    [Documentation]    Draw a line profile measurement annotation on the image
     SikuliLibrary.Click    ${locators}lineprofilermeasurement_button.png
     SikuliLibrary.Drag And Drop    ${locators}src.png    ${locators}tar.png
 
-Line Profile Measurement Annotation Should Be Added 
+Line Profile Measurement Annotation Should Be Added
     [Documentation]    Verify that the line profile measurement annotation is added
     Screen Should Contain    ${locators}line_profile_measurement.png
 
 Draw Ruler Annotation
+    [Documentation]    Draw a ruler annotation on the image
     SikuliLibrary.Click    ${locators}ruler_button.png
     SikuliLibrary.Drag And Drop    ${locators}src.png    ${locators}tar.png
     sleep    5
@@ -161,4 +165,4 @@ Click Grid Overlay Button
 Compare Image Viewer
     [Arguments]    ${file_name}
     [Documentation]    Compare the image viewer with the expected image
-    Screen Should Contain    ${locators}${file_name}
+    SikuliLibrary.Screen Should Contain    ${locators}${file_name}

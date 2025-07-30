@@ -132,7 +132,7 @@ Close VC Security Application
 MFVC-T198 - Verify whether grid overlay is applied over the image
     [Documentation]    Test grid overlay functionality
     Click Grid Overlay Button
-    Compare Image Viewer    grid_overlay.png
+    Compare Image Viewer    grid_overlay_viewer.png
 
 MFVC-T199 - Verify whether grid overlay is removed from the image
     [Documentation]    Test grid overlay removal functionality
