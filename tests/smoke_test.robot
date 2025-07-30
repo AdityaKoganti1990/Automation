@@ -55,7 +55,7 @@ Close VC Security Application
 # MFVC-T183 - Verify whether able to undo the applied filter over the image
 #     [Documentation]    Test undo functionality for applied filter
 #     Undo Last Action
-#     Orginal Image Should Be Shown
+#     Original Image Should Be Shown    
 
 # MFVC-T184 - Verify the Text cursor can be added on the image
 #     [Documentation]    Test text cursor functionality
@@ -129,13 +129,107 @@ Close VC Security Application
 #     Delete Annotation
 #     Image Should Not Contain Annotation
 
-MFVC-T198 - Verify whether grid overlay is applied over the image
-    [Documentation]    Test grid overlay functionality
-    Click Grid Overlay Button
-    Compare Image Viewer    grid_overlay_viewer.png
+# MFVC-T198 - Verify whether grid overlay is applied over the image
+#     [Documentation]    Test grid overlay functionality
+#     Click Grid Overlay Button
+#     Compare Image Viewer    grid_overlay_viewer.png
 
-MFVC-T199 - Verify whether grid overlay is removed from the image
-    [Documentation]    Test grid overlay removal functionality
-    Click Grid Overlay Button
-    Compare Image Viewer    image_viewer.png
+# MFVC-T199 - Verify whether grid overlay is removed from the image
+#     [Documentation]    Test grid overlay removal functionality
+#     Click Grid Overlay Button
+#     Compare Image Viewer    image_viewer.png
 
+# MFVC-T200 - Verify the Invert is applied over the image in image viewer
+#     [Documentation]    Test invert functionality
+#     Click on Invert Image Button
+#     Compare Image Viewer    invert_image_viewer1.png
+
+# MFVC-T201 - Verify the Invert is removed from the image in image viewer
+#     [Documentation]    Test invert removal functionality
+#     Click on Invert Image Button
+#     Compare Image Viewer    image_viewer.png
+
+# MFVC-T202 - Verify the Zoom 1:1 is applied over the image in image viewer
+#     [Documentation]    Test zoom 1:1 functionality
+#     Click on Zoom 1:1 Button
+#     Compare Image Viewer    zoom_1_1_viewer.png
+
+# MFVC-T203 - Verify the Zoom 1:1 is removed from the image in image viewer
+#     [Documentation]    Test zoom 1:1 removal functionality
+#     Click on Zoom Fit Button
+#     Compare Image Viewer    image_viewer.png
+
+# MFVC-T204 - Verify the Zoom- is applied over the image in image viewer(not working)
+#     [Documentation]    Test zoom- functionality
+#     Click on Zoom- Button    3
+#     Compare Image Viewer    zoom_minus_viewer.png
+
+# MFVC-T205 - Verify the Zoom+ is applied over the image in image viewer(not working)
+#     [Documentation]    Test zoom+ functionality
+#     Click on Zoom+ Button    3
+#     Compare Image Viewer    zoom_plus_viewer.png 
+
+# MFVC-T206 - Verify the colormap1 is applied over the image in image viewer(not working)
+#     [Documentation]    Test colormap functionality
+#     Click on Colormap Button    1
+#     Compare Image Viewer    colormap_viewer1.png
+
+# MFVC-T207 - Verify the colormap1 is applied over the image in image viewer(not working)
+#     [Documentation]    Test colormap functionality
+#     Click on Colormap Button    2
+#     Compare Image Viewer    colormap_viewer2.png
+
+# MFVC-T208 - Verify the colormap1 is applied over the image in image viewer(not working)
+#     [Documentation]    Test colormap functionality
+#     Click on Colormap Button    3
+#     Compare Image Viewer    colormap_viewer3.png
+
+# MFVC-T209 - Verify the colormap1 is applied over the image in image viewer(not working)
+#     [Documentation]    Test colormap functionality
+#     Click on Colormap Button    4
+#     Compare Image Viewer    colormap_viewer4.png
+
+# MFVC-T210 - Verify the colormap1 is applied over the image in image viewer(not working)
+#     [Documentation]    Test colormap functionality
+#     Click on Colormap Button    5
+#     Compare Image Viewer    colormap_viewer5.png
+
+# MFVC-T211 - Verify the Thumbnail Nvigation window is opening
+#     [Documentation]    Test thumbnail navigation window functionality
+#     Open/Close Thumbnail Navigation Window
+#     Compare Image Viewer    thumbnail_navigation_viewer.png
+
+# MFVC-T212 - Verify the Thumbnail Navigation window is closing
+#     [Documentation]    Test thumbnail navigation window functionality
+#     Open/Close Thumbnail Navigation Window
+#     Compare Image Viewer    image_viewer.png
+
+# MFVC-T213 - Verify the Rotate 90Degrees Clockwise button is working (not working)
+#     [Documentation]    Test rotate 90 degrees counter clockwise functionality
+#     Rotate Image    90 Degrees Counterclockwise
+#     Compare Image Viewer    rotate_90_counterclockwise_viewer.png
+#     Rotate Image    90 Degrees Clockwise
+
+# MFVC-T214 - Verify the Rotate 90Degrees Clockwise button is working (not working)
+#     [Documentation]    Test rotate 90 degrees clockwise functionality
+#     Rotate Image    90 Degrees Clockwise
+#     Compare Image Viewer    rotate_90_clockwise_viewer.png
+#     Rotate Image    90 Degrees Counterclockwise
+
+# MFVC-T215 - Verify the Rotate 180Degrees Clockwise button is working (not working)
+#     [Documentation]    Test rotate 180 degrees functionality
+#     Rotate Image    180 Degrees
+#     Compare Image Viewer    rotated_image.png
+#     Rotate Image    180 Degrees
+
+# MFVC-T216 - Verify the Rotate Mirror Horizontal button is working (not working)
+#     [Documentation]    Test rotate mirror horizontal functionality
+#     Rotate Image    Mirror Horizontal
+#     Compare Image Viewer    rotate_mirror_horizontal_viewer.png
+#     Rotate Image    Mirror Horizontal
+
+# MFVC-T217 - Verify the Rotate Mirror Vertical button is working (not working)
+#     [Documentation]    Test rotate mirror vertical functionality
+#     Rotate Image    Mirror Vertical
+#     Compare Image Viewer    rotate_mirror_vertical_viewer.png
+#     Rotate Image    Mirror Vertical

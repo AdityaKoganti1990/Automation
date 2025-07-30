@@ -77,7 +77,7 @@ Undo Last Action
     [Documentation]    Undo the last action performed on the image
     SikuliLibrary.Click    ${locators}undo_button.png
 
-Orginal Image Should Be Shown
+Original Image Should Be Shown
     [Documentation]    Verify that the original image is shown after undo
     Image Should Be Opened
 
@@ -166,3 +166,82 @@ Compare Image Viewer
     [Arguments]    ${file_name}
     [Documentation]    Compare the image viewer with the expected image
     SikuliLibrary.Screen Should Contain    ${locators}${file_name}
+
+Click on Invert Image Button
+    [Documentation]    Click the Invert Image button in the image viewer
+    SikuliLibrary.Click    ${locators}invert_image_button.png
+
+Click on Zoom 1:1 Button
+    [Documentation]    Click the Zoom 1:1 button in the image viewer
+    SikuliLibrary.Click    ${locators}zoom_button.png
+    SikuliLibrary.Click    ${locators}zoom_1_1_button.png
+    SikuliLibrary.Click    ${locators}move_the_image.png
+
+Click on Zoom Fit Button
+    [Documentation]    Click the Zoom Fit button in the image viewer
+    SikuliLibrary.Click    ${locators}zoom_button.png
+    SikuliLibrary.Click    ${locators}zoom_fit_button.png
+    SikuliLibrary.Click    ${locators}move_the_image.png
+
+Click on Zoom- Button
+    [Arguments]    ${zoomcount}
+    [Documentation]    Click the Zoom- button in the image viewer
+    SikuliLibrary.Click    ${locators}zoom_button.png
+    IF    ${zoomcount} > 0
+        FOR    ${i}    IN RANGE    ${zoomcount}
+            SikuliLibrary.Click    ${locators}zoom_minus_button.png
+    END
+    END
+    SikuliLibrary.Click    ${locators}move_the_image.png
+
+Click on Zoom+ Button
+    [Arguments]    ${zoomcount}
+    [Documentation]    Click the Zoom+ button in the image viewer
+    SikuliLibrary.Click    ${locators}zoom_button.png
+    IF    ${zoomcount} > 0
+        FOR    ${i}    IN RANGE    ${zoomcount}
+            SikuliLibrary.Click    ${locators}zoom_plus_button.png
+    END
+    END
+    SikuliLibrary.Click    ${locators}move_the_image.png
+
+Click on Colormap Button
+    [Arguments]    ${colormap}
+    [Documentation]    Click the Colormap button in the image viewer
+    SikuliLibrary.Click    ${locators}colormap_button.png
+    IF    ${colormap} == "1"
+        SikuliLibrary.Click    ${locators}colormap1.png
+    ELSE IF    ${colormap} == "2"
+        SikuliLibrary.Click    ${locators}colormap2.png
+    ELSE IF    ${colormap} == "3"
+        SikuliLibrary.Click    ${locators}colormap3.png
+    ELSE IF    ${colormap} == "4"
+        SikuliLibrary.Click    ${locators}colormap4.png
+    ELSE IF    ${colormap} == "5"
+        SikuliLibrary.Click    ${locators}colormap5.png
+    END
+   
+Open/Close Thumbnail Navigation Window
+    [Documentation]    Open or close the thumbnail navigation window
+    SikuliLibrary.Click    ${locators}thumbnail_navigation_button.png
+
+Rotate Image
+    [Arguments]    ${degree}
+    [Documentation]    Rotate the image
+    SikuliLibrary.Click    ${locators}rotate_button.png
+    Sleep    1
+    IF    ${degree} == "90 Degrees Clockwise"
+        SikuliLibrary.Click    ${locators}rotate_90_clockwise_button.png
+    ELSE IF    ${degree} == "90 Degrees Counterclockwise"
+        SikuliLibrary.Click    ${locators}rotate_90_counterclockwise_button.png
+    ELSE IF    ${degree} == "180 Degrees"
+        SikuliLibrary.Click    ${locators}rotate_180_button.png
+    ELSE IF    ${degree} == "Mirror Horizontal"
+        SikuliLibrary.Click    ${locators}mirror_horizontal_button.png
+    ELSE IF    ${degree} == "Mirror Vertical"
+        SikuliLibrary.Click    ${locators}mirror_vertical_button.png    
+        
+    END
+    Sleep    1
+    SikuliLibrary.Click    ${locators}move_the_image.png
+
