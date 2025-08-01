@@ -228,7 +228,8 @@ MFVC-T217 - Verify the Rotate Mirror Vertical button is working (not working)
 
 MFVC-T183 - Verify whether able to undo the applied filter over the image
     [Documentation]    Test undo functionality for applied filter
-    # Undo Last Action
+    Apply Filter    Sharpening
+    Undo Last Action
     Compare Image Viewer    image_viewer.png
 
 MFVC-T93 - Verify the Gamma Filter is applied over the image on dragging the Gamma slider
