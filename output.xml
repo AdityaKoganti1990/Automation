@@ -1,47 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.5 on win32)" generated="2025-08-01T16:36:54.877294" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.13.5 on win32)" generated="2025-08-05T15:55:07.602797" rpa="false" schemaversion="5">
 <suite id="s1" name="Tests" source="z:\Visual Studio Code\Automation\tests">
 <suite id="s1-s1" name="Smoke Test" source="z:\Visual Studio Code\Automation\tests\smoke_test.robot">
-<test id="s1-s1-t1" name="MFVC-T183 - Verify whether able to undo the applied filter over the image" line="229">
-<kw name="Compare Image Viewer" owner="image_editor">
+<test id="s1-s1-t1" name="MFVC-T103 - Verify whether auto window lwvwl is applied over the image in image viewer" line="308">
+<kw name="Apply Window Level" owner="image_editor">
+<kw name="Click" owner="SikuliLibrary">
+<msg time="2025-08-05T15:55:12.162894" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1754389511358.png'/&gt;
+[log] CLICK on L[30,364]@S(0) (577 msec)</msg>
+<arg>${locators}window_level_button.png</arg>
+<doc>Click</doc>
+<status status="PASS" start="2025-08-05T15:55:10.889918" elapsed="1.275624"/>
+</kw>
+<if>
+<branch type="IF" condition="${count}&gt; 0">
+<for flavor="IN RANGE">
+<iter>
+<kw name="Drag And Drop" owner="SikuliLibrary">
+<msg time="2025-08-05T15:55:15.140576" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1754389512641.png'/&gt;</msg>
+<msg time="2025-08-05T15:55:15.140581" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1754389513148.png'/&gt;</msg>
+<arg>${locators}src.png</arg>
+<arg>${locators}tar.png</arg>
+<doc>Drag the source image to target image.
+If source image is empty, drag the last match and drop at given target</doc>
+<status status="PASS" start="2025-08-05T15:55:12.167049" elapsed="2.974518"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-08-05T15:55:12.166715" elapsed="2.975186"/>
+</iter>
+<var>${i}</var>
+<value>${count}</value>
+<status status="PASS" start="2025-08-05T15:55:12.166305" elapsed="2.975868"/>
+</for>
+<status status="PASS" start="2025-08-05T15:55:12.165868" elapsed="2.976561"/>
+</branch>
+<status status="PASS" start="2025-08-05T15:55:12.165815" elapsed="2.976750"/>
+</if>
+<arg>1</arg>
+<doc>Apply window level to the image</doc>
+<status status="PASS" start="2025-08-05T15:55:10.889260" elapsed="4.253497"/>
+</kw>
+<kw name="Apply Auto Window Level" owner="image_editor">
+<kw name="Click" owner="SikuliLibrary">
+<msg time="2025-08-05T15:55:16.158393" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1754389515402.png'/&gt;
+[log] CLICK on L[1892,771]@S(0) (571 msec)</msg>
+<arg>${locators}auto_window_level_button.png</arg>
+<doc>Click</doc>
+<status status="PASS" start="2025-08-05T15:55:15.144443" elapsed="1.014853"/>
+</kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-08-01T16:36:58.621012" level="INFO">Slept 1 second.</msg>
+<msg time="2025-08-05T15:55:17.162474" level="INFO">Slept 1 second.</msg>
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-08-01T16:36:57.620578" elapsed="1.002781"/>
+<status status="PASS" start="2025-08-05T15:55:16.160877" elapsed="1.002268"/>
+</kw>
+<doc>Apply auto window level to the image</doc>
+<status status="PASS" start="2025-08-05T15:55:15.143818" elapsed="2.019928"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Compare Image Viewer" owner="image_editor">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-05T15:55:18.166184" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-05T15:55:17.165731" elapsed="1.000730"/>
 </kw>
 <kw name="Screen Should Contain" owner="SikuliLibrary">
-<msg time="2025-08-01T16:36:59.462573" level="INFO">Could not find P(z:\Visual Studio Code\Automation\tests/../locators/image_viewer.png) S: 0.699999988079071</msg>
-<msg time="2025-08-01T16:36:59.462589" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1754046419147.png'/&gt;</msg>
-<msg time="2025-08-01T16:36:59.463027" level="FAIL">com.github.rainmanwy.robotframework.sikulilib.exceptions.ScreenOperationException: Screen should contain z:\Visual Studio Code\Automation\tests/../locators/image_viewer.png</msg>
+<msg time="2025-08-05T15:55:18.824676" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1754389518554.png'/&gt;</msg>
 <arg>${locators}${file_name}</arg>
 <doc>Screen should contain</doc>
-<status status="FAIL" start="2025-08-01T16:36:58.623672" elapsed="0.841348">com.github.rainmanwy.robotframework.sikulilib.exceptions.ScreenOperationException: Screen should contain z:\Visual Studio Code\Automation\tests/../locators/image_viewer.png</status>
+<status status="PASS" start="2025-08-05T15:55:18.166716" elapsed="0.658302"/>
 </kw>
 <arg>image_viewer.png</arg>
 <doc>Compare the image viewer with the expected image</doc>
-<status status="FAIL" start="2025-08-01T16:36:57.619795" elapsed="1.845497">com.github.rainmanwy.robotframework.sikulilib.exceptions.ScreenOperationException: Screen should contain z:\Visual Studio Code\Automation\tests/../locators/image_viewer.png</status>
+<status status="PASS" start="2025-08-05T15:55:17.165284" elapsed="1.659942"/>
 </kw>
-<doc>Test undo functionality for applied filter</doc>
+<arg>Compare Image Viewer</arg>
+<arg>image_viewer.png</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2025-08-05T15:55:17.164742" elapsed="1.660592"/>
+</kw>
+<doc>Test auto window level functionality</doc>
 <tag>Smoke Test</tag>
-<status status="FAIL" start="2025-08-01T16:36:57.618796" elapsed="1.847076">com.github.rainmanwy.robotframework.sikulilib.exceptions.ScreenOperationException: Screen should contain z:\Visual Studio Code\Automation\tests/../locators/image_viewer.png</status>
+<status status="PASS" start="2025-08-05T15:55:10.887062" elapsed="7.938691"/>
 </test>
 <doc>Sample test suite for VC Security application</doc>
-<status status="FAIL" start="2025-08-01T16:36:54.898155" elapsed="4.568734"/>
+<status status="PASS" start="2025-08-05T15:55:07.630048" elapsed="11.196769"/>
 </suite>
 <doc>Somke test suite for VC Security application</doc>
-<status status="FAIL" start="2025-08-01T16:36:54.881150" elapsed="4.586771"/>
+<status status="PASS" start="2025-08-05T15:55:07.608446" elapsed="11.220523"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">Smoke Test</stat>
+<stat pass="1" fail="0" skip="0">Smoke Test</stat>
 </tag>
 <suite>
-<stat name="Tests" id="s1" pass="0" fail="1" skip="0">Tests</stat>
-<stat name="Smoke Test" id="s1-s1" pass="0" fail="1" skip="0">Tests.Smoke Test</stat>
+<stat name="Tests" id="s1" pass="1" fail="0" skip="0">Tests</stat>
+<stat name="Smoke Test" id="s1-s1" pass="1" fail="0" skip="0">Tests.Smoke Test</stat>
 </suite>
 </statistics>
 <errors>

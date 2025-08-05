@@ -4,8 +4,8 @@ Resource          ../resources/common.resource
 Resource          ../keywords/image_editor.resource
 
 
-Suite Setup    Open VCSecurity Application
-Suite Teardown    Close VC Security Application
+# Suite Setup    Open VCSecurity Application
+# Suite Teardown    Close VC Security Application
 
 *** Variables ***
 ${locators}       ${CURDIR}/../locators/
@@ -276,5 +276,38 @@ MFVC-T97 Verify the Emboss Filter is applied over the image on dragging the Embo
     Apply Filter    Emboss
     Compare Image Viewer    emboss_filtered_image.png
 
+MFVC-T98 - Verify the window level is applied over the image in image viewer
+    [Documentation]    Test window level functionality
+    Open Image Button
+    Type File Name    purse.tiff
+    Apply Window Level    1
+    Run Keyword And Continue On Failure    Compare Image Viewer    window_level_viewer.png
+    Open Image Button
+    Type File Name    purse.tiff
 
+MFVC-T99 - Verify the Histogram window can be opened.
+    [Documentation]    Test histogram window functionality
+    Open/Close Histogram Window
+    Compare Image Viewer    histogram_viewer.png
+
+MFVC-T100 - Verify the Histogram window can be closed.
+    [Documentation]    Test histogram window close functionality
+    Open/Close Histogram Window
+    Compare Image Viewer    image_viewer.png
+
+MFVC-T101 - Verify the Place Enhancement ROI is applied over the image in image viewer
+    [Documentation]    Test place enhancement ROI functionality
+    Place_Enhancement_ROI    Sharpening
+    Run Keyword And Continue On Failure    Compare Image Viewer    roi_sharpening_viewer.png
+
+MFVC-T102 - Verify the Place Enhancement ROI is removed from the image in image viewer
+    [Documentation]    Test place enhancement ROI removal functionality
+    Delete Annotation
+    Run Keyword And Continue On Failure    Compare Image Viewer    image_viewer.png
+
+MFVC-T103 - Verify whether auto window level is applied over the image in image viewer
+    [Documentation]    Test auto window level functionality
+    Apply Window Level    1
+    Apply Auto Window Level
+    Run Keyword And Continue On Failure    Compare Image Viewer    image_viewer.png
 

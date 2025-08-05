@@ -9,6 +9,7 @@ ${APP_PATH}       C:/Program Files/Scanna MSC/VCSecurity/VCSecurity.exe
 ${locators}       ${CURDIR}/../locators/
 ${test_data}    ${CURDIR}/../testdata/
 ${TIMEOUT}       15
+${CTRLDOWN}      CTRL
 
 *** Keywords ***
 Open Image Button
@@ -211,3 +212,39 @@ Apply Filter
     ...    ELSE IF    '${filter_type}' == 'Emboss'         Run Keywords    SikuliLibrary.Drag And Drop    ${locators}mouse_wheel_down_1.png    ${locators}mouse_wheel_down_2.png    AND    SikuliLibrary.Click    ${locators}emboss_slider.png    AND    SikuliLibrary.Drag And Drop    ${locators}emboss_slider.png    ${locators}emboss_target.png
     Sleep    1
     SikuliLibrary.Click    ${locators}close_enhancement.png
+
+Apply Window Level
+    [Arguments]    ${count}
+    [Documentation]    Apply window level to the image
+    SikuliLibrary.Click    ${locators}window_level_button.png
+    IF    ${count}> 0
+        FOR    ${i}    IN RANGE    ${count}
+            SikuliLibrary.Drag And Drop    ${locators}src.png    ${locators}tar.png
+        END           
+    END
+
+Open/Close Histogram Window
+    [Documentation]    Open the histogram window
+    Sleep    1
+    SikuliLibrary.Click    ${locators}histogram_button.png
+    
+Place_Enhancement_ROI
+    [Arguments]    ${filter_type}
+    [Documentation]    Place the enhancement ROI on the image
+    SikuliLibrary.Click    ${locators}place_enhancement_roi.png
+    Sleep    1
+    SikuliLibrary.Drag And Drop    ${locators}src.png    ${locators}tar.png
+    Sleep    1
+    Run Keyword If    '${filter_type}' == 'Sharpening'    Run Keywords    SikuliLibrary.Click    ${locators}sharpening_slider.png    AND    SikuliLibrary.Drag And Drop    ${locators}sharpening_slider.png    ${locators}sharpening_target.png
+    ...    ELSE IF    '${filter_type}' == 'Gamma'         Run Keywords    SikuliLibrary.Click    ${locators}gamma_slider.png    AND    SikuliLibrary.Drag And Drop    ${locators}gamma_slider.png    ${locators}gamma_target.png
+    ...    ELSE IF    '${filter_type}' == 'Median'    Run Keywords    SikuliLibrary.Click    ${locators}median_slider.png    AND    SikuliLibrary.Drag And Drop    ${locators}median_slider.png    ${locators}median_target.png
+    ...    ELSE IF    '${filter_type}' == 'Noisereduction'     Run Keywords    SikuliLibrary.Click    ${locators}noisereduction_slider.png    AND    SikuliLibrary.Drag And Drop    ${locators}noisereduction_slider.png    ${locators}noisereduction_target.png
+    ...    ELSE IF    '${filter_type}' == 'Contrast'         Run Keywords    SikuliLibrary.Click    ${locators}contrast_slider.png    AND    SikuliLibrary.Drag And Drop    ${locators}contrast_slider.png    ${locators}contrast_target.png
+    ...    ELSE IF    '${filter_type}' == 'Emboss'         Run Keywords    SikuliLibrary.Click    ${locators}emboss_slider.png    AND    SikuliLibrary.Drag And Drop    ${locators}emboss_slider.png    ${locators}emboss_target.png
+    Sleep    1
+    SikuliLibrary.Click    ${locators}close_enhancement.png
+
+Apply Auto Window Level
+    [Documentation]    Apply auto window level to the image
+    SikuliLibrary.Click    ${locators}auto_window_level_button.png
+    Sleep    1
